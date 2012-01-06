@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework.Graphics;
+﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 using TankDriver.Logic;
 
 namespace TankDriver.Models
@@ -16,7 +17,7 @@ namespace TankDriver.Models
 		/// <summary>
 		/// Tank texture.
 		/// </summary>
-		private Texture _tankTexture;
+		private Texture2D _tankTexture;
 
 		/// <summary>
 		/// Model constructor.
@@ -46,12 +47,12 @@ namespace TankDriver.Models
 		}
 
 		/// <summary>
-		/// Renders model to device.
+		/// Renders model.
 		/// </summary>
-		/// <param name="graphicsDevice">A graphics device.</param>
-		public void Render(GraphicsDevice graphicsDevice)
+		/// <param name="spriteBatch">Object for performing drawing actions.</param>
+		public void Render(SpriteBatch spriteBatch)
 		{
-
+			spriteBatch.Draw(_tankTexture, Vector2.Zero, Color.White);
 		}
 	}
 }

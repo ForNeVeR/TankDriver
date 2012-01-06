@@ -74,13 +74,17 @@ namespace TankDriver
 		/// <param name="gameTime">Provides a snapshot of timing values.</param>
 		protected override void Draw(GameTime gameTime)
 		{
+			_spriteBatch.Begin();
+			
 			// Clear screen:
 			GraphicsDevice.Clear(Color.CornflowerBlue);
 
 			// Render the tank:
-			_tank.GetModel().Render(GraphicsDevice);
+			_tank.GetModel().Render(_spriteBatch);
 
 			base.Draw(gameTime);
+
+			_spriteBatch.End();
 		}
 	}
 }

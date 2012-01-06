@@ -21,9 +21,9 @@ namespace TankDriver.Models
 		void LoadTextures(TextureStorage textureStorage);
 
 		/// <summary>
-		/// Renders model to device.
+		/// Renders model.
 		/// </summary>
-		/// <param name="graphicsDevice">A graphics device.</param>
-		void Render(GraphicsDevice graphicsDevice);
+		/// <param name="spriteBatch">Object for performing drawing actions.</param>
+		void Render(SpriteBatch spriteBatch);
 	}
 }

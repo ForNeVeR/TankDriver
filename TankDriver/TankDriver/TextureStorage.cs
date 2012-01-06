@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Microsoft.Xna.Framework.Content;
+﻿using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 
 namespace TankDriver
@@ -15,7 +11,7 @@ namespace TankDriver
 		/// <summary>
 		/// Tank texture.
 		/// </summary>
-		public Texture TankTexture { get; private set; }
+		public Texture2D TankTexture { get; private set; }
 		
 		/// <summary>
 		/// Texture storage constructor. Loads textures from <see cref="contentManager"/>.
@@ -23,7 +19,7 @@ namespace TankDriver
 		/// <param name="contentManager">Object from which textures will be loaded.</param>
 		public TextureStorage(ContentManager contentManager)
 		{
-			TankTexture = contentManager.Load<Texture>("tank");
+			TankTexture = contentManager.Load<Texture2D>("tank");
 		}
 	}
 }
