@@ -6,20 +6,26 @@ namespace TankDriver
 	/// <summary>
 	/// Class for storeing loaded textures.
 	/// </summary>
-	class TextureStorage
+	internal class TextureStorage
 	{
 		/// <summary>
-		/// Tank texture.
+		/// Tank body texture.
 		/// </summary>
-		public Texture2D TankTexture { get; private set; }
-		
+		public Texture2D TankBodyTexture { get; private set; }
+
+		/// <summary>
+		/// Tank turret texture.
+		/// </summary>
+		public Texture2D TankTurretTexture { get; private set; }
+
 		/// <summary>
 		/// Texture storage constructor. Loads textures from <see cref="contentManager"/>.
 		/// </summary>
 		/// <param name="contentManager">Object from which textures will be loaded.</param>
 		public TextureStorage(ContentManager contentManager)
 		{
-			TankTexture = contentManager.Load<Texture2D>("tank");
+			TankBodyTexture = contentManager.Load<Texture2D>("Tank/Body");
+			TankTurretTexture = contentManager.Load<Texture2D>("Tank/Turret");
 		}
 	}
 }

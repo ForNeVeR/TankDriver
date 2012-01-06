@@ -42,8 +42,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="tank.png">
-      <Name>tank</Name>
+    <Compile Include="Tank\Body.png">
+      <Name>Body</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Tank\Turret.png">
+      <Name>Turret</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>

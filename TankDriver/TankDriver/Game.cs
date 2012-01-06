@@ -102,6 +102,9 @@ namespace TankDriver
 				_tank.StopTurning();
 			}
 
+			var mouseState = Mouse.GetState();
+			_tank.SetTarget(mouseState.X, mouseState.Y);
+
 			_tank.UpdatePosition(gameTime.ElapsedGameTime);
 
 			base.Update(gameTime);

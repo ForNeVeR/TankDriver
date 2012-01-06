@@ -8,7 +8,7 @@ namespace TankDriver.Logic
 	/// <summary>
 	/// Class representing tank in game logic terms.
 	/// </summary>
-	class Tank : IUnit
+	internal class Tank : IUnit
 	{
 		/// <summary>
 		/// Acceleration, px / s ^ 2.
@@ -16,19 +16,34 @@ namespace TankDriver.Logic
 		public const double AccelerationConstant = 5.0;
 
 		/// <summary>
-		/// Body turning acceleration, rad / s ^ 2.
+		/// Body turning speed, rad / s.
 		/// </summary>
 		public const double TurnSpeedConstant = 0.5;
-		
+
+		/// <summary>
+		/// Turret turning speed, rad / s.
+		/// </summary>
+		public const double TurretTurnSpeedConstant = 1.0;
+
+		/// <summary>
+		/// Current target point.
+		/// </summary>
+		private PointD _target;
+
 		/// <summary>
 		/// Current tank position, px.
 		/// </summary>
 		public PointD Position { get; private set; }
 
 		/// <summary>
-		/// Tank body heading, radians.
+		/// Tank body heading, rad.
 		/// </summary>
 		public double Heading { get; private set; }
+
+		/// <summary>
+		/// Tank turret heading, rad.
+		/// </summary>
+		public double TurretHeading { get; private set; }
 
 		/// <summary>
 		/// Tank model.
@@ -55,10 +70,11 @@ namespace TankDriver.Logic
 		/// </summary>
 		/// <param name="x">X coordinate of tank.</param>
 		/// <param name="y">Y coordinate of tank.</param>
+		/// <param name="heading">Heading of tank, rad.</param>
 		public Tank(double x, double y, double heading)
 		{
 			Position = new PointD(x, y);
-			Heading = heading;
+			Heading = TurretHeading = heading;
 
 			_model = new TankModel(this);
 		}
@@ -77,7 +93,17 @@ namespace TankDriver.Logic
 			double time = timeDelta.TotalSeconds;
 			Position = Position.MovedByVector(VectorD.Polar(Speed*time, Heading));
 			Speed += Acceleration*time;
-			Heading += TurnSpeed*time;
+
+			double turn = TurnSpeed*time;
+			Heading += turn;
+			TurretHeading += turn;
+
+			// Calculate turret heading:
+			double targetTurretHeading = VectorD.Cartesian(_target.X - Position.X, _target.Y - Position.Y).Heading;
+			double turretHeadingDelta = targetTurretHeading - TurretHeading;
+			double turretHeadingChange = Math.Sign(turretHeadingDelta)*
+			                             Math.Min(Math.Abs(turretHeadingDelta), TurretTurnSpeedConstant);
+			TurretHeading += turretHeadingChange;
 		}
 
 		public void Accelerate()
@@ -103,6 +129,16 @@ namespace TankDriver.Logic
 		public void StopTurning()
 		{
 			TurnSpeed = 0.0;
+		}
+
+		/// <summary>
+		/// Sets target for turret.
+		/// </summary>
+		/// <param name="x">X coordinate of target.</param>
+		/// <param name="y">Y coordinate of target.</param>
+		public void SetTarget(double x, double y)
+		{
+			_target = new PointD(x, y);
 		}
 	}
 }

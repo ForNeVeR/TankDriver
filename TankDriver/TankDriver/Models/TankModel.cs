@@ -1,5 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using TankDriver.Geometry;
 using TankDriver.Logic;
 
 namespace TankDriver.Models
@@ -7,7 +8,7 @@ namespace TankDriver.Models
 	/// <summary>
 	/// Graphical model of tank.
 	/// </summary>
-	class TankModel : IModel
+	internal class TankModel : IModel
 	{
 		/// <summary>
 		/// Tank associated with this model.
@@ -17,7 +18,7 @@ namespace TankDriver.Models
 		/// <summary>
 		/// Tank texture.
 		/// </summary>
-		private Texture2D _tankTexture;
+		private TextureStorage _textureStorage;
 
 		/// <summary>
 		/// Model constructor.
@@ -43,7 +44,7 @@ namespace TankDriver.Models
 		/// <param name="textureStorage">Texture storage.</param>
 		public void LoadTextures(TextureStorage textureStorage)
 		{
-			_tankTexture = textureStorage.TankTexture;
+			_textureStorage = textureStorage;
 		}
 
 		/// <summary>
@@ -52,10 +53,18 @@ namespace TankDriver.Models
 		/// <param name="spriteBatch">Object for performing drawing actions.</param>
 		public void Render(SpriteBatch spriteBatch)
 		{
-			var tankTextureCenter = new Vector2(_tankTexture.Width/2, _tankTexture.Height/2);
-			spriteBatch.Draw(_tankTexture,
-				new Vector2((float) _tank.Position.X, (float) _tank.Position.Y),
-				null, Color.White, (float) _tank.Heading, tankTextureCenter, 1f, SpriteEffects.None, 0f);
+			var bodyTexture = _textureStorage.TankBodyTexture;
+			var turretTexture = _textureStorage.TankTurretTexture;
+			var bodyTextureCenter = new Vector2(bodyTexture.Width/2, bodyTexture.Height/2);
+			var turretTexturePivot = new Vector2(22, 20); // TODO: Get it from model config.
+
+			var bodyPosition = _tank.Position;
+			var turretPivotPosition = bodyPosition.MovedByVector(VectorD.Polar(-10.0, _tank.Heading));
+
+			spriteBatch.Draw(bodyTexture, (Vector2) bodyPosition, null, Color.White,
+			                 (float) _tank.Heading, bodyTextureCenter, 1f, SpriteEffects.None, 0f);
+			spriteBatch.Draw(turretTexture, (Vector2) turretPivotPosition, null, Color.White,
+			                 (float) _tank.TurretHeading, turretTexturePivot, 1f, SpriteEffects.None, 0f);
 		}
 	}
 }
