@@ -52,7 +52,10 @@ namespace TankDriver.Models
 		/// <param name="spriteBatch">Object for performing drawing actions.</param>
 		public void Render(SpriteBatch spriteBatch)
 		{
-			spriteBatch.Draw(_tankTexture, new Vector2((float) _tank.Position.X, (float) _tank.Position.Y), Color.White);
+			var tankTextureCenter = new Vector2(_tankTexture.Width/2, _tankTexture.Height/2);
+			spriteBatch.Draw(_tankTexture,
+				new Vector2((float) _tank.Position.X, (float) _tank.Position.Y),
+				null, Color.White, (float) _tank.Heading, tankTextureCenter, 1f, SpriteEffects.None, 0f);
 		}
 	}
 }
