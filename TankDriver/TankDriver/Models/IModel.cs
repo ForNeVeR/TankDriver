@@ -15,6 +15,12 @@ namespace TankDriver.Models
 		IUnit GetUnit();
 
 		/// <summary>
+		/// Loads textures from storage.
+		/// </summary>
+		/// <param name="textureStorage">Texture storage.</param>
+		void LoadTextures(TextureStorage textureStorage);
+
+		/// <summary>
 		/// Renders model to device.
 		/// </summary>
 		/// <param name="graphicsDevice">A graphics device.</param>

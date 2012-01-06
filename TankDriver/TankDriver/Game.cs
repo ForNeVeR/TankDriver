@@ -12,6 +12,9 @@ namespace TankDriver
 		GraphicsDeviceManager _graphics;
 		SpriteBatch _spriteBatch;
 
+		/// <summary>
+		/// Player tank.
+		/// </summary>
 		Tank _tank;
 
 		public Game()
@@ -42,7 +45,8 @@ namespace TankDriver
 			// Create a new SpriteBatch, which can be used to draw textures.
 			_spriteBatch = new SpriteBatch(GraphicsDevice);
 
-			// TODO: use this.Content to load your game content here
+			var textureStorage = new TextureStorage(Content);
+			_tank.GetModel().LoadTextures(textureStorage);
 		}
 
 		/// <summary>
@@ -70,6 +74,7 @@ namespace TankDriver
 		/// <param name="gameTime">Provides a snapshot of timing values.</param>
 		protected override void Draw(GameTime gameTime)
 		{
+			// Clear screen:
 			GraphicsDevice.Clear(Color.CornflowerBlue);
 
 			// Render the tank:

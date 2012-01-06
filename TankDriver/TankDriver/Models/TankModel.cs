@@ -14,6 +14,11 @@ namespace TankDriver.Models
 		private readonly Tank _tank;
 
 		/// <summary>
+		/// Tank texture.
+		/// </summary>
+		private Texture _tankTexture;
+
+		/// <summary>
 		/// Model constructor.
 		/// </summary>
 		/// <param name="tank">Tank for this model.</param>
@@ -29,6 +34,15 @@ namespace TankDriver.Models
 		public IUnit GetUnit()
 		{
 			return _tank;
+		}
+
+		/// <summary>
+		/// Loads textures from storage.
+		/// </summary>
+		/// <param name="textureStorage">Texture storage.</param>
+		public void LoadTextures(TextureStorage textureStorage)
+		{
+			_tankTexture = textureStorage.TankTexture;
 		}
 
 		/// <summary>
