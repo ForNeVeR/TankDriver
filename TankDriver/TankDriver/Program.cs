@@ -6,9 +6,9 @@ namespace TankDriver
 		/// <summary>
 		/// The main entry point for the application.
 		/// </summary>
-		static void Main(string[] args)
+		static void Main()
 		{
-			using (Game game = new Game())
+			using (var game = new Game())
 			{
 				game.Run();
 			}
