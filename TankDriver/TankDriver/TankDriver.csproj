@@ -107,6 +107,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Geometry\PointD.cs" />
+    <Compile Include="Geometry\VectorD.cs" />
     <Compile Include="Logic\IUnit.cs" />
     <Compile Include="Logic\Tank.cs" />
     <Compile Include="Models\IModel.cs" />
