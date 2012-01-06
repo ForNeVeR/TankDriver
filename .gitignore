@@ -1,6 +1,8 @@
 bin/
 obj/
 
+_ReSharper.*/
+
 *.suo
 *.user
 *.cachefile
