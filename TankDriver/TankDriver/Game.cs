@@ -31,7 +31,7 @@ namespace TankDriver
 		/// </summary>
 		protected override void Initialize()
 		{
-			_tank = new Tank(50, 50);
+			_tank = new Tank(50f, 50f);
 
 			base.Initialize();
 		}

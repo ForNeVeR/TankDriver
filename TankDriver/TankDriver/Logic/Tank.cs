@@ -11,7 +11,7 @@ namespace TankDriver.Logic
 		/// <summary>
 		/// Current tank position.
 		/// </summary>
-		private Point _position;
+		public Vector2 Position;
 
 		/// <summary>
 		/// Tank model.
@@ -23,9 +23,9 @@ namespace TankDriver.Logic
 		/// </summary>
 		/// <param name="x">X coordinate of tank.</param>
 		/// <param name="y">Y coordinate of tank.</param>
-		public Tank(int x, int y)
+		public Tank(float x, float y)
 		{
-			_position = new Point(x, y);
+			Position = new Vector2(x, y);
 			_model = new TankModel(this);
 		}
 
