@@ -1,5 +1,6 @@
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Input;
 using TankDriver.Logic;
 
 namespace TankDriver
@@ -9,14 +10,24 @@ namespace TankDriver
 	/// </summary>
 	public class Game : Microsoft.Xna.Framework.Game
 	{
-		GraphicsDeviceManager _graphics;
-		SpriteBatch _spriteBatch;
+		/// <summary>
+		/// Graphics device manager.
+		/// </summary>
+		private GraphicsDeviceManager _graphics;
+
+		/// <summary>
+		/// Object for performing batch sprite operations.
+		/// </summary>
+		private SpriteBatch _spriteBatch;
 
 		/// <summary>
 		/// Player tank.
 		/// </summary>
-		Tank _tank;
+		private Tank _tank;
 
+		/// <summary>
+		/// Game constructor.
+		/// </summary>
 		public Game()
 		{
 			_graphics = new GraphicsDeviceManager(this);
@@ -31,7 +42,7 @@ namespace TankDriver
 		/// </summary>
 		protected override void Initialize()
 		{
-			_tank = new Tank(50f, 50f);
+			_tank = new Tank(50.0, 50.0, 0.0);
 
 			base.Initialize();
 		}
@@ -55,7 +66,7 @@ namespace TankDriver
 		/// </summary>
 		protected override void UnloadContent()
 		{
-			// TODO: Unload any non ContentManager content here
+			
 		}
 
 		/// <summary>
@@ -65,6 +76,34 @@ namespace TankDriver
 		/// <param name="gameTime">Provides a snapshot of timing values.</param>
 		protected override void Update(GameTime gameTime)
 		{
+			var keyboardState = Keyboard.GetState();
+			if (keyboardState.IsKeyDown(Keys.W))
+			{
+				_tank.Accelerate();
+			}
+			if (keyboardState.IsKeyDown(Keys.S))
+			{
+				_tank.Decelerate();
+			}
+
+			bool turning = false;
+			if (keyboardState.IsKeyDown(Keys.A))
+			{
+				_tank.TurnLeft();
+				turning = true;
+			}
+			if (keyboardState.IsKeyDown(Keys.D))
+			{
+				_tank.TurnRight();
+				turning = !turning;
+			}
+			if (!turning)
+			{
+				_tank.StopTurning();
+			}
+
+			_tank.UpdatePosition(gameTime.ElapsedGameTime);
+
 			base.Update(gameTime);
 		}
 
