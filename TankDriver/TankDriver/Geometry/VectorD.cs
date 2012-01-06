@@ -28,7 +28,7 @@ namespace TankDriver.Geometry
 
 		public static VectorD Polar(double length, double heading)
 		{
-			var result = new VectorD {X = length*Math.Sin(heading), Y = length*Math.Cos(heading)};
+			var result = new VectorD {X = length*Math.Cos(heading), Y = length*Math.Sin(heading)};
 			return result;
 		}
 	}
