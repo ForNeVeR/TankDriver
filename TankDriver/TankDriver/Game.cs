@@ -89,12 +89,12 @@ namespace TankDriver
 			bool turning = false;
 			if (keyboardState.IsKeyDown(Keys.A))
 			{
-				_tank.TurnLeft();
+				_tank.TurnRight();
 				turning = true;
 			}
 			if (keyboardState.IsKeyDown(Keys.D))
 			{
-				_tank.TurnRight();
+				_tank.TurnLeft();
 				turning = !turning;
 			}
 			if (!turning)
