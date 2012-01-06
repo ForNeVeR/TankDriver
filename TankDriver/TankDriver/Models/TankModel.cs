@@ -1,5 +1,4 @@
-﻿using System;
-using Microsoft.Xna.Framework.Graphics;
+﻿using Microsoft.Xna.Framework.Graphics;
 using TankDriver.Logic;
 
 namespace TankDriver.Models
@@ -10,12 +9,26 @@ namespace TankDriver.Models
 	class TankModel : IModel
 	{
 		/// <summary>
+		/// Tank associated with this model.
+		/// </summary>
+		private readonly Tank _tank;
+
+		/// <summary>
+		/// Model constructor.
+		/// </summary>
+		/// <param name="tank">Tank for this model.</param>
+		public TankModel(Tank tank)
+		{
+			_tank = tank;
+		}
+
+		/// <summary>
 		/// Returls tank unit associated with this model.
 		/// </summary>
 		/// <returns>Tank unit.</returns>
 		public IUnit GetUnit()
 		{
-			throw new NotImplementedException();
+			return _tank;
 		}
 
 		/// <summary>

@@ -1,6 +1,6 @@
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using Microsoft.Xna.Framework.Input;
+using TankDriver.Logic;
 
 namespace TankDriver
 {
@@ -9,12 +9,14 @@ namespace TankDriver
 	/// </summary>
 	public class Game : Microsoft.Xna.Framework.Game
 	{
-		GraphicsDeviceManager graphics;
-		SpriteBatch spriteBatch;
+		GraphicsDeviceManager _graphics;
+		SpriteBatch _spriteBatch;
+
+		Tank _tank;
 
 		public Game()
 		{
-			graphics = new GraphicsDeviceManager(this);
+			_graphics = new GraphicsDeviceManager(this);
 			Content.RootDirectory = "Content";
 		}
 
@@ -26,7 +28,7 @@ namespace TankDriver
 		/// </summary>
 		protected override void Initialize()
 		{
-			// TODO: Add your initialization logic here
+			_tank = new Tank(50, 50);
 
 			base.Initialize();
 		}
@@ -38,7 +40,7 @@ namespace TankDriver
 		protected override void LoadContent()
 		{
 			// Create a new SpriteBatch, which can be used to draw textures.
-			spriteBatch = new SpriteBatch(GraphicsDevice);
+			_spriteBatch = new SpriteBatch(GraphicsDevice);
 
 			// TODO: use this.Content to load your game content here
 		}
@@ -59,12 +61,6 @@ namespace TankDriver
 		/// <param name="gameTime">Provides a snapshot of timing values.</param>
 		protected override void Update(GameTime gameTime)
 		{
-			// Allows the game to exit
-			if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
-				this.Exit();
-
-			// TODO: Add your update logic here
-
 			base.Update(gameTime);
 		}
 
@@ -76,7 +72,8 @@ namespace TankDriver
 		{
 			GraphicsDevice.Clear(Color.CornflowerBlue);
 
-			// TODO: Add your drawing code here
+			// Render the tank:
+			_tank.GetModel().Render(GraphicsDevice);
 
 			base.Draw(gameTime);
 		}
