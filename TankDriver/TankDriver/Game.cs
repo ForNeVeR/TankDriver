@@ -31,6 +31,7 @@ namespace TankDriver
 		public Game()
 		{
 			_graphics = new GraphicsDeviceManager(this);
+			_graphics.PreferMultiSampling = true;
 			Content.RootDirectory = "Content";
 		}
 
