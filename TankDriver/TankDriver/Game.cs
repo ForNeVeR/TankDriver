@@ -13,7 +13,7 @@ namespace TankDriver
 		/// <summary>
 		/// Graphics device manager.
 		/// </summary>
-		private GraphicsDeviceManager _graphics;
+		private readonly GraphicsDeviceManager _graphics;
 
 		/// <summary>
 		/// Object for performing batch sprite operations.
@@ -30,8 +30,7 @@ namespace TankDriver
 		/// </summary>
 		public Game()
 		{
-			_graphics = new GraphicsDeviceManager(this);
-			_graphics.PreferMultiSampling = true;
+			_graphics = new GraphicsDeviceManager(this) {PreferMultiSampling = true};
 			Content.RootDirectory = "Content";
 		}
 
@@ -67,7 +66,6 @@ namespace TankDriver
 		/// </summary>
 		protected override void UnloadContent()
 		{
-			
 		}
 
 		/// <summary>
@@ -118,7 +116,7 @@ namespace TankDriver
 		protected override void Draw(GameTime gameTime)
 		{
 			_spriteBatch.Begin();
-			
+
 			// Clear screen:
 			GraphicsDevice.Clear(Color.CornflowerBlue);
 
