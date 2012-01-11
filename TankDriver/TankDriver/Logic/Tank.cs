@@ -102,7 +102,7 @@ namespace TankDriver.Logic
 			double targetTurretHeading = VectorD.Cartesian(_target.X - Position.X, _target.Y - Position.Y).Heading;
 			double turretHeadingDelta = targetTurretHeading - TurretHeading;
 			double turretHeadingChange = Math.Sign(turretHeadingDelta)*
-			                             Math.Min(Math.Abs(turretHeadingDelta), TurretTurnSpeedConstant);
+			                             Math.Min(Math.Abs(turretHeadingDelta), TurretTurnSpeedConstant*time);
 			TurretHeading += turretHeadingChange;
 		}
 
