@@ -1,9 +1,17 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TankDriver", "TankDriver\TankDriver\TankDriver.csproj", "{BF6D9DBC-A45F-4813-B268-31496AF65451}"
 EndProject
 Project("{96E2B04D-8817-42C6-938A-82C39BA4D311}") = "TankDriverContent", "TankDriver\TankDriverContent\TankDriverContent.contentproj", "{FFC04FC1-4FAB-4EE6-B669-66A96E60C535}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{46D2DF55-694E-4068-9FB0-C217873A5C55}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+		Readme.md = Readme.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
