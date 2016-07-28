@@ -14,6 +14,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		Readme.md = Readme.md
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TankDriver.App", "TankDriver.App\TankDriver.App.csproj", "{2E1023FD-AE4E-4C32-AE6C-55B788ECBE7E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
@@ -26,6 +28,10 @@ Global
 		{BF6D9DBC-A45F-4813-B268-31496AF65451}.Release|x86.Build.0 = Release|x86
 		{FFC04FC1-4FAB-4EE6-B669-66A96E60C535}.Debug|x86.ActiveCfg = Debug|x86
 		{FFC04FC1-4FAB-4EE6-B669-66A96E60C535}.Release|x86.ActiveCfg = Release|x86
+		{2E1023FD-AE4E-4C32-AE6C-55B788ECBE7E}.Debug|x86.ActiveCfg = Debug|x86
+		{2E1023FD-AE4E-4C32-AE6C-55B788ECBE7E}.Debug|x86.Build.0 = Debug|x86
+		{2E1023FD-AE4E-4C32-AE6C-55B788ECBE7E}.Release|x86.ActiveCfg = Release|x86
+		{2E1023FD-AE4E-4C32-AE6C-55B788ECBE7E}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
