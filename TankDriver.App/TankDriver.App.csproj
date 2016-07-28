@@ -38,9 +38,16 @@
     <ApplicationIcon>Icon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Game1.cs" />
+    <Compile Include="Game.cs" />
+    <Compile Include="Geometry\PointD.cs" />
+    <Compile Include="Geometry\VectorD.cs" />
+    <Compile Include="Logic\IUnit.cs" />
+    <Compile Include="Logic\Tank.cs" />
+    <Compile Include="Models\IModel.cs" />
+    <Compile Include="Models\TankModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TextureStorage.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="OpenTK">
