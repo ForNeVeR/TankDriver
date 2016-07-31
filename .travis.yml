@@ -1,0 +1,7 @@
+language: csharp
+mono: latest
+solution: TankDriver.sln
+install:
+    - nuget restore
+script:
+    - xbuild /p:Configuration=Release /p:TargetFrameworkVersion="v4.5" TankDriver.sln
