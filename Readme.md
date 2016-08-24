@@ -76,4 +76,4 @@ progress.**
 
 [appveyor-status]: https://ci.appveyor.com/api/projects/status/486qc2gl6m18pbvn/branch/develop?svg=true
 [status-umbra]: https://img.shields.io/badge/status-umbra-red.svg
-[travis-status]: https://travis-ci.org/ForNeVeR/TankDriver.svg?branch=master
+[travis-status]: https://travis-ci.org/ForNeVeR/TankDriver.svg?branch=develop
