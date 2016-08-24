@@ -58,14 +58,21 @@ On Linux:
 $ mono ./packages/xunit.runner.console.2.1.0/tools/xunit.console.exe ./TankDriver.Tests/bin/Release/TankDriver.Tests.dll
 ```
 
+**Please note that the tests cannot be run on mono 4.0 because of
+[xunit#158][xunit-158]. Unfortunately that's the case of stable NixOs. We're
+still looking for solution, see [TankDriver#11][tankdriver-11] to track the
+progress.**
+
 [andivionian-status-classifier]: https://github.com/ForNeVeR/andivionian-status-classifier#status-umbra-
 [appveyor]: https://ci.appveyor.com/project/ForNeVeR/tankdriver/branch/develop
 [mono]: http://www.mono-project.com/
 [monogame]: http://www.monogame.net/
 [nuget]: https://www.nuget.org/
+[tankdriver-11]: https://github.com/ForNeVeR/TankDriver/issues/11
 [travis]: https://travis-ci.org/ForNeVeR/TankDriver
 [visual-studio]: https://www.visualstudio.com/
 [xunit]: https://xunit.github.io/
+[xunit-158]: https://github.com/xunit/xunit/issues/158
 
 [appveyor-status]: https://ci.appveyor.com/api/projects/status/486qc2gl6m18pbvn/branch/develop?svg=true
 [status-umbra]: https://img.shields.io/badge/status-umbra-red.svg
