@@ -4,5 +4,5 @@ solution: TankDriver.sln
 install:
     - nuget restore
 script:
-    - xbuild /p:Configuration=Release /p:TargetFrameworkVersion="v4.5" TankDriver.sln
+    - xbuild /p:Configuration=Release TankDriver.sln
     - mono ./packages/xunit.runner.console.2.1.0/tools/xunit.console.exe ./TankDriver.Tests/bin/Release/TankDriver.Tests.dll
