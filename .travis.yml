@@ -3,7 +3,6 @@ mono: latest
 solution: TankDriver.sln
 install:
     - nuget restore
-    - nuget install xunit.runner.console -Version 2.1.0 -OutputDirectory testrunner
 script:
     - xbuild /p:Configuration=Release /p:TargetFrameworkVersion="v4.5" TankDriver.sln
-    - mono ./testrunner/xunit.runner.console.2.1.0/tools/xunit.console.exe ./TankDriver.Tests/bin/Release/TankDriver.Tests.dll
+    - mono ./packages/xunit.runner.console.2.1.0/tools/xunit.console.exe ./TankDriver.Tests/bin/Release/TankDriver.Tests.dll
