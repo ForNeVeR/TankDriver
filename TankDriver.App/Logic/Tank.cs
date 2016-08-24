@@ -131,6 +131,11 @@ namespace TankDriver.Logic
 			TurnSpeed = 0.0;
 		}
 
+		public void Shoot()
+		{
+			Console.WriteLine ("Shoot!");
+		}
+
 		/// <summary>
 		/// Sets target for turret.
 		/// </summary>
