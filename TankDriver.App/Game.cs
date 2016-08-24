@@ -102,6 +102,10 @@ namespace TankDriver
 			}
 
 			var mouseState = Mouse.GetState();
+			if (mouseState.LeftButton == ButtonState.Pressed) {
+				_tank.Shoot ();
+			}
+
 			_tank.SetTarget(mouseState.X, mouseState.Y);
 
 			_tank.UpdatePosition(gameTime.ElapsedGameTime);
