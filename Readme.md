@@ -49,13 +49,13 @@ and run `TankDriver.Tests` assembly with this runner. It can be done with the
 following commands on Windows:
 
 ```console
-> .\packages\xunit.runner.console.2.1.0\tools\xunit.console.exe .\TankDriver.Tests\bin\Release\TankDriver.Tests.dll
+> .\packages\xunit.runner.console.2.1.0\tools\xunit.console.exe .\TankDriver.Tests\bin\Debug\TankDriver.Tests.dll
 ```
 
 On Linux:
 
 ```console
-$ mono ./packages/xunit.runner.console.2.1.0/tools/xunit.console.exe ./TankDriver.Tests/bin/Release/TankDriver.Tests.dll
+$ mono ./packages/xunit.runner.console.2.1.0/tools/xunit.console.exe ./TankDriver.Tests/bin/Debug/TankDriver.Tests.dll
 ```
 
 **Please note that the tests cannot be run on mono 4.0 because of
