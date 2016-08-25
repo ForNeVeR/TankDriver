@@ -1,4 +1,5 @@
 ﻿using System;
+using NLog;
 
 namespace TankDriver.App
 {
@@ -7,16 +8,20 @@ namespace TankDriver.App
     /// </summary>
     public static class Program
     {
+        private static Logger Logger = LogManager.GetCurrentClassLogger();
+
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
         [STAThread]
         static void Main()
         {
+            Logger.Info("Game started");
             using (var game = new Game())
             {
                 game.Run();
             }
+            Logger.Info("Exiting game");
         }
     }
 }
