@@ -62,19 +62,19 @@ after start (Windows-specific).
 Test
 ----
 
-This project uses [Xunit][xunit] test library. This library provides multiple
-runners and adapters for various IDE; you're recommended to use whatever fits
-you better.
+This project uses [xUnit.net][xunit] test library. This library provides
+multiple runners and adapters for various IDE; you're recommended to use
+whatever fits you better.
 
 The default cross-platform option is to use `xunit.runner.console` NuGet package
-and run `TankDriver.Tests` assembly with this runner. It can be done with the
+to execute tests from `TankDriver.Tests` assembly. It can be done with the
 following commands on Windows:
 
 ```console
 > .\packages\xunit.runner.console.2.1.0\tools\xunit.console.exe .\TankDriver.Tests\bin\Debug\TankDriver.Tests.dll
 ```
 
-On Linux:
+Or the following commands on Linux:
 
 ```console
 $ mono ./packages/xunit.runner.console.2.1.0/tools/xunit.console.exe ./TankDriver.Tests/bin/Debug/TankDriver.Tests.dll
