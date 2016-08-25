@@ -37,6 +37,23 @@ $ nuget restore
 $ xbuild
 ```
 
+Run
+---
+
+To run the game on Windows, execute the following commands:
+
+```console
+> cd TankDriver.App\bin\Debug
+> .\TankDriver.App.exe
+```
+
+On Linux:
+
+```console
+$ cd TankDriver.App/bin/Debug
+$ mono ./TankDriver.App.exe
+```
+
 Test
 ----
 
