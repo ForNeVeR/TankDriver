@@ -54,6 +54,11 @@ $ cd TankDriver.App/bin/Debug
 $ mono ./TankDriver.App.exe
 ```
 
+### Program arguments
+
+Use the `--console` flag if you don't want the game to hide the console window
+after start (Windows-specific).
+
 Test
 ----
 
