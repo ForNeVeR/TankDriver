@@ -8,7 +8,7 @@ namespace TankDriver.App
     /// </summary>
     public static class Program
     {
-        private static Logger Logger = LogManager.GetCurrentClassLogger();
+        private static readonly Logger Logger = LogManager.GetCurrentClassLogger();
 
         /// <summary>
         /// The main entry point for the application.
