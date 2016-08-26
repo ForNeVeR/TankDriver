@@ -26,6 +26,11 @@ namespace TankDriver
 		private Tank _tank;
 
 		/// <summary>
+		/// The test bullet.
+		/// </summary>
+		private Bullet _testBullet;
+
+		/// <summary>
 		/// Game constructor.
 		/// </summary>
 		public Game()
