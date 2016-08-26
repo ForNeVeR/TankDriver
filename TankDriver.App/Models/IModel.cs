@@ -9,7 +9,7 @@ namespace TankDriver.Models
 	interface IModel
 	{
 		/// <summary>
-		/// Returls unit associated with this model.
+		/// Returns unit associated with this model.
 		/// </summary>
 		/// <returns>Unit.</returns>
 		IUnit GetUnit();
