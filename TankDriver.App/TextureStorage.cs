@@ -19,6 +19,12 @@ namespace TankDriver
 		public Texture2D TankTurretTexture { get; private set; }
 
 		/// <summary>
+		/// Bullet texture
+		/// </summary>
+		/// <value>The bullet texture.</value>
+		public Texture2D BulletTexture { get; private set; }
+
+		/// <summary>
 		/// Texture storage constructor. Loads textures from <see cref="contentManager"/>.
 		/// </summary>
 		/// <param name="contentManager">Object from which textures will be loaded.</param>
