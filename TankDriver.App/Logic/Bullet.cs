@@ -9,10 +9,12 @@ namespace TankDriver.Logic
 		private readonly BulletModel _model;
 
 		public PointD Position { get; private set; }
+		public double Heading { get; private set; }
 
-		public Bullet (double x, double y)
+		public Bullet (double x, double y, double heading)
 		{
 			Position = new PointD (x, y);
+			Heading = heading;
 			_model = new BulletModel (this);
 		}
 
@@ -26,7 +28,8 @@ namespace TankDriver.Logic
 		}
 
 		public void UpdatePosition(TimeSpan timeDelta) {
-			
+			double time = timeDelta.TotalSeconds;
+			Position = Position.MovedByVector (VectorD.Polar(time * 10.0, Heading)); 
 		}
 	}
 }
