@@ -26,9 +26,9 @@ namespace TankDriver
 		private Tank _tank;
 
 		/// <summary>
-		/// The test bullet.
+		/// The bullet space.
 		/// </summary>
-		private Bullet _testBullet;
+		private BulletSpace _bulletSpace;
 
 		/// <summary>
 		/// Game constructor.
@@ -48,7 +48,7 @@ namespace TankDriver
 		protected override void Initialize()
 		{
 			_tank = new Tank(50.0, 50.0, 0.0);
-			_testBullet = new Bullet (400.0, 400.0, 0.0);
+			_bulletSpace = new BulletSpace ();
 
 			base.Initialize();
 		}
@@ -64,7 +64,7 @@ namespace TankDriver
 
 			var textureStorage = new TextureStorage(Content);
 			_tank.GetModel().LoadTextures(textureStorage);
-			_testBullet.GetModel ().LoadTextures (textureStorage);
+			_bulletSpace.GetModel ().LoadTextures (textureStorage);
 		}
 
 		/// <summary>
@@ -110,13 +110,13 @@ namespace TankDriver
 
 			var mouseState = Mouse.GetState();
 			if (mouseState.LeftButton == ButtonState.Pressed) {
-				_tank.Shoot ();
+				_tank.ShootInto (_bulletSpace);
 			}
 
 			_tank.SetTarget(mouseState.X, mouseState.Y);
 
 			_tank.UpdatePosition(gameTime.ElapsedGameTime);
-			_testBullet.UpdatePosition (gameTime.ElapsedGameTime);
+			_bulletSpace.Update (gameTime.ElapsedGameTime);
 
 			base.Update(gameTime);
 		}
@@ -136,7 +136,7 @@ namespace TankDriver
 			_tank.GetModel().Render(_spriteBatch);
 
 			// Render test bullet:
-			_testBullet.GetModel().Render(_spriteBatch);
+			_bulletSpace.GetModel().Render(_spriteBatch);
 
 			base.Draw(gameTime);
 

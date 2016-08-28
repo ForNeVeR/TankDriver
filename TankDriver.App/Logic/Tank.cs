@@ -131,9 +131,9 @@ namespace TankDriver.Logic
 			TurnSpeed = 0.0;
 		}
 
-		public void Shoot()
+		public void ShootInto(BulletSpace bulletSpace)
 		{
-			Console.WriteLine ("Shoot!");
+			bulletSpace.AddBullet (Position.X, Position.Y, TurretHeading);
 		}
 
 		/// <summary>
