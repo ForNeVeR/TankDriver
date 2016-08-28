@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Microsoft.Xna.Framework;
 using TankDriver.Models;
 
 namespace TankDriver.Logic
@@ -8,11 +9,13 @@ namespace TankDriver.Logic
 	{
 		public List<Bullet> Bullets { get; private set; }
 		private BulletSpaceModel _bulletSpaceModel;
+		private Rectangle _bounds;
 
-		public BulletSpace ()
+		public BulletSpace (Rectangle bounds)
 		{
 			Bullets = new List<Bullet> ();
 			_bulletSpaceModel = new BulletSpaceModel (this);
+			_bounds = bounds;
 		}
 
 		public void AddBullet (double x, double y, double heading)
@@ -27,8 +30,12 @@ namespace TankDriver.Logic
 			foreach (var bullet in Bullets) {
 				bullet.UpdatePosition (timeDelta);
 			}
+				
+			Bullets.RemoveAll (delegate(Bullet bullet) {
+				return !_bounds.Contains((Vector2) bullet.Position);
+			});
 
-			// TODO: check for bullets that are outside of the screen
+			Console.WriteLine (Bullets.Count);
 		}
 
 		public IModel GetModel()

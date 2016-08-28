@@ -48,7 +48,7 @@ namespace TankDriver
 		protected override void Initialize()
 		{
 			_tank = new Tank(50.0, 50.0, 0.0);
-			_bulletSpace = new BulletSpace ();
+			_bulletSpace = new BulletSpace (GraphicsDevice.PresentationParameters.Bounds);
 
 			base.Initialize();
 		}
