@@ -32,6 +32,7 @@ namespace TankDriver
 		{
 			TankBodyTexture = contentManager.Load<Texture2D>("Tank/Body");
 			TankTurretTexture = contentManager.Load<Texture2D>("Tank/Turret");
+			BulletTexture = contentManager.Load<Texture2D> ("Bullet/Bullet");
 		}
 	}
 }
