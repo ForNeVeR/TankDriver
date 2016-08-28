@@ -51,6 +51,8 @@
     <Compile Include="TextureStorage.cs" />
     <Compile Include="Logic\Bullet.cs" />
     <Compile Include="Models\BulletModel.cs" />
+    <Compile Include="Logic\BulletSpace.cs" />
+    <Compile Include="Models\BulletSpaceModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />

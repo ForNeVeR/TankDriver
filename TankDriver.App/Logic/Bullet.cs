@@ -29,7 +29,7 @@ namespace TankDriver.Logic
 
 		public void UpdatePosition(TimeSpan timeDelta) {
 			double time = timeDelta.TotalSeconds;
-			Position = Position.MovedByVector (VectorD.Polar(time * 10.0, Heading)); 
+			Position = Position.MovedByVector (VectorD.Polar(time * 150.0, Heading)); 
 		}
 	}
 }
