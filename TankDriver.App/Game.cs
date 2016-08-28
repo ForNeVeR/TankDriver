@@ -48,7 +48,7 @@ namespace TankDriver
 		protected override void Initialize()
 		{
 			_tank = new Tank(50.0, 50.0, 0.0);
-			_testBullet = new Bullet (400.0, 400.0);
+			_testBullet = new Bullet (400.0, 400.0, 0.0);
 
 			base.Initialize();
 		}
