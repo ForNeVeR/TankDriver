@@ -49,6 +49,7 @@ namespace TankDriver.Models
 		/// <param name="spriteBatch">Object for performing drawing actions.</param>
 		public void Render(SpriteBatch spriteBatch)
 		{
+			spriteBatch.Draw (_textureStorage.BulletTexture, (Vector2) _bullet.Position);
 		}
 	}
 }
