@@ -1,5 +1,6 @@
 ﻿using System;
 using TankDriver.Models;
+using TankDriver.Geometry;
 
 namespace TankDriver.Logic
 {
@@ -7,8 +8,11 @@ namespace TankDriver.Logic
 	{
 		private readonly BulletModel _model;
 
+		public PointD Position { get; private set; }
+
 		public Bullet (double x, double y)
 		{
+			Position = new PointD (x, y);
 			_model = new BulletModel (this);
 		}
 
@@ -19,6 +23,10 @@ namespace TankDriver.Logic
 		public IModel GetModel()
 		{
 			return _model;
+		}
+
+		public void UpdatePosition(TimeSpan timeDelta) {
+			
 		}
 	}
 }

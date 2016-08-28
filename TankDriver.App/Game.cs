@@ -48,6 +48,7 @@ namespace TankDriver
 		protected override void Initialize()
 		{
 			_tank = new Tank(50.0, 50.0, 0.0);
+			_testBullet = new Bullet (400.0, 400.0);
 
 			base.Initialize();
 		}
@@ -63,6 +64,7 @@ namespace TankDriver
 
 			var textureStorage = new TextureStorage(Content);
 			_tank.GetModel().LoadTextures(textureStorage);
+			_testBullet.GetModel ().LoadTextures (textureStorage);
 		}
 
 		/// <summary>
@@ -114,6 +116,7 @@ namespace TankDriver
 			_tank.SetTarget(mouseState.X, mouseState.Y);
 
 			_tank.UpdatePosition(gameTime.ElapsedGameTime);
+			_testBullet.UpdatePosition (gameTime.ElapsedGameTime);
 
 			base.Update(gameTime);
 		}
@@ -131,6 +134,9 @@ namespace TankDriver
 
 			// Render the tank:
 			_tank.GetModel().Render(_spriteBatch);
+
+			// Render test bullet:
+			_testBullet.GetModel().Render(_spriteBatch);
 
 			base.Draw(gameTime);
 
