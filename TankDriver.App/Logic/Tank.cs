@@ -31,6 +31,11 @@ namespace TankDriver.Logic
 		private PointD _target;
 
 		/// <summary>
+		/// The turret cooldown.
+		/// </summary>
+		private double _turretCooldown;
+
+		/// <summary>
 		/// Current tank position, px.
 		/// </summary>
 		public PointD Position { get; private set; }
@@ -77,6 +82,7 @@ namespace TankDriver.Logic
 			Heading = TurretHeading = heading;
 
 			_model = new TankModel(this);
+			_turretCooldown = 0.0;
 		}
 
 		/// <summary>
@@ -91,6 +97,7 @@ namespace TankDriver.Logic
 		public void UpdatePosition(TimeSpan timeDelta)
 		{
 			double time = timeDelta.TotalSeconds;
+			_turretCooldown = Math.Max (0.0, _turretCooldown - time);
 			Position = Position.MovedByVector(VectorD.Polar(Speed*time, Heading));
 			Speed += Acceleration*time;
 
@@ -133,7 +140,10 @@ namespace TankDriver.Logic
 
 		public void ShootInto(BulletSpace bulletSpace)
 		{
-			bulletSpace.AddBullet (Position.X, Position.Y, TurretHeading);
+			if (_turretCooldown <= 0.0) {
+				bulletSpace.AddBullet (Position.X, Position.Y, TurretHeading);
+				_turretCooldown = 1.0;
+			}
 		}
 
 		/// <summary>
