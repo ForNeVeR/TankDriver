@@ -34,8 +34,6 @@ namespace TankDriver.Logic
 			Bullets.RemoveAll (delegate(Bullet bullet) {
 				return !_bounds.Contains((Vector2) bullet.Position);
 			});
-
-			Console.WriteLine (Bullets.Count);
 		}
 
 		public IModel GetModel()
