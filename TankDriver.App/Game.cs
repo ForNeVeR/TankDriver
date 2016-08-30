@@ -135,7 +135,7 @@ namespace TankDriver
 			// Render the tank:
 			_tank.GetModel().Render(_spriteBatch);
 
-			// Render test bullet:
+			// Render bullet space:
 			_bulletSpace.GetModel().Render(_spriteBatch);
 
 			base.Draw(gameTime);
