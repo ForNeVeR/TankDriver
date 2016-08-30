@@ -6,6 +6,8 @@ namespace TankDriver.Logic
 {
 	internal class Bullet: IUnit
 	{
+		private const double BULLET_VELOCITY = 150.0;
+
 		private readonly BulletModel _model;
 
 		public PointD Position { get; private set; }
@@ -29,7 +31,7 @@ namespace TankDriver.Logic
 
 		public void UpdatePosition(TimeSpan timeDelta) {
 			double time = timeDelta.TotalSeconds;
-			Position = Position.MovedByVector (VectorD.Polar(time * 150.0, Heading)); 
+			Position = Position.MovedByVector (VectorD.Polar(time * BULLET_VELOCITY, Heading)); 
 		}
 	}
 }
