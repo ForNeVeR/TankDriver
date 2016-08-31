@@ -46,7 +46,12 @@ Global
 		$2.inheritsSet = null
 		$2.scope = text/x-csharp
 		$0.CSharpFormattingPolicy = $3
+		$3.BeforeMethodDeclarationParentheses = False
+		$3.BeforeMethodCallParentheses = False
+		$3.BeforeConstructorDeclarationParentheses = False
+		$3.BeforeDelegateDeclarationParentheses = False
 		$3.AfterDelegateDeclarationParameterComma = True
+		$3.NewParentheses = False
 		$3.inheritsSet = Mono
 		$3.inheritsScope = text/x-csharp
 		$3.scope = text/x-csharp
@@ -63,6 +68,12 @@ Global
 		$7.inheritsSet = Mono
 		$7.inheritsScope = application/xml
 		$7.scope = application/xml
+		$0.DotNetNamingPolicy = $8
+		$8.DirectoryNamespaceAssociation = None
+		$8.ResourceNamePolicy = FileFormatDefault
+		$0.StandardHeader = $9
+		$9.Text = 
+		$9.IncludeInNewFiles = True
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
