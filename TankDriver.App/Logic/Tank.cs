@@ -102,7 +102,7 @@ namespace TankDriver.Logic
 		public void UpdatePosition(TimeSpan timeDelta)
 		{
 			double time = timeDelta.TotalSeconds;
-			_turretCooldown = Math.Max (0.0, _turretCooldown - time);
+			_turretCooldown = Math.Max(0.0, _turretCooldown - time);
 			Position = Position.MovedByVector(VectorD.Polar(Speed*time, Heading));
 			Speed += Acceleration*time;
 
@@ -143,13 +143,14 @@ namespace TankDriver.Logic
 			TurnSpeed = 0.0;
 		}
 
-		public void ShootInto(BulletSpace bulletSpace)
-		{
-			if (_turretCooldown <= 0.0) {
-				bulletSpace.AddBullet (Position.X, Position.Y, TurretHeading);
-				_turretCooldown = TurretCooldownSeconds;
-			}
-		}
+        public void ShootInto(BulletSpace bulletSpace)
+        {
+            if (_turretCooldown <= 0.0)
+            {
+                bulletSpace.AddBullet(Position.X, Position.Y, TurretHeading);
+                _turretCooldown = TurretCooldownSeconds;
+            }
+        }
 
 		/// <summary>
 		/// Sets target for turret.

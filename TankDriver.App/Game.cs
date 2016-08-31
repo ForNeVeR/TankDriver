@@ -48,7 +48,7 @@ namespace TankDriver
 		protected override void Initialize()
 		{
 			_tank = new Tank(50.0, 50.0, 0.0);
-			_bulletSpace = new BulletSpace (GraphicsDevice.PresentationParameters.Bounds);
+			_bulletSpace = new BulletSpace(GraphicsDevice.PresentationParameters.Bounds);
 
 			base.Initialize();
 		}
@@ -109,14 +109,15 @@ namespace TankDriver
 			}
 
 			var mouseState = Mouse.GetState();
-			if (mouseState.LeftButton == ButtonState.Pressed) {
-				_tank.ShootInto (_bulletSpace);
-			}
+            if (mouseState.LeftButton == ButtonState.Pressed)
+            {
+                _tank.ShootInto(_bulletSpace);
+            }
 
 			_tank.SetTarget(mouseState.X, mouseState.Y);
 
 			_tank.UpdatePosition(gameTime.ElapsedGameTime);
-			_bulletSpace.Update (gameTime.ElapsedGameTime);
+			_bulletSpace.Update(gameTime.ElapsedGameTime);
 
 			base.Update(gameTime);
 		}
