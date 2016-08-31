@@ -8,7 +8,7 @@ namespace TankDriver.Logic
 {
 	internal class BulletSpace
 	{
-		public List<Bullet> Bullets { get; private set; }
+		public List<Bullet> Bullets { get; }
 		private Rectangle _bounds;
 		private TextureStorage _textureStorage;
 
