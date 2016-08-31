@@ -11,7 +11,7 @@ namespace TankDriver.Logic
 		private readonly BulletModel _model;
 
 		public PointD Position { get; private set; }
-		public double Heading { get; private set; }
+		public double Heading { get; }
 
 		public Bullet (double x, double y, double heading)
 		{
