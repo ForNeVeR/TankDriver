@@ -26,7 +26,7 @@ $ nuget restore
 $ xbuild
 ```
 
-#### NixOs
+#### NixOS
 
 There's a ready nix-shell environment in `default.nix`. Just invoke the
 following:
@@ -81,7 +81,7 @@ $ mono ./packages/xunit.runner.console.2.1.0/tools/xunit.console.exe ./TankDrive
 ```
 
 **Please note that the tests cannot be run on mono 4.0 because of
-[xunit#158][xunit-158]. Unfortunately that's the case of stable NixOs. We're
+[xunit#158][xunit-158]. Unfortunately that's the case of stable NixOS. We're
 still looking for solution, see [TankDriver#11][tankdriver-11] to track the
 progress.**
 
