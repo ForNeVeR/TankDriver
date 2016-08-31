@@ -1,28 +1,40 @@
 ﻿using System;
 using System.Collections.Generic;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 using TankDriver.Models;
 
 namespace TankDriver.Logic
 {
-	internal class BulletSpace: IUnit
+	internal class BulletSpace
 	{
 		public List<Bullet> Bullets { get; private set; }
-		private BulletSpaceModel _bulletSpaceModel;
 		private Rectangle _bounds;
+		private TextureStorage _textureStorage;
 
 		public BulletSpace (Rectangle bounds)
 		{
 			Bullets = new List<Bullet> ();
-			_bulletSpaceModel = new BulletSpaceModel (this);
 			_bounds = bounds;
 		}
 
 		public void AddBullet (double x, double y, double heading)
 		{
 			var bullet = new Bullet (x, y, heading);
-			_bulletSpaceModel.LoadBulletTextures (bullet.GetModel());
+			bullet.GetModel ().LoadTextures (_textureStorage);
 			Bullets.Add (bullet);
+		}
+
+		public void LoadTexture(TextureStorage textureStorage)
+		{
+			_textureStorage = textureStorage;
+		}
+
+		public void Render(SpriteBatch spriteBatch)
+		{
+			foreach (var bullet in Bullets) {
+				bullet.GetModel ().Render (spriteBatch);
+			}
 		}
 
 		public void Update(TimeSpan timeDelta)
@@ -34,11 +46,6 @@ namespace TankDriver.Logic
 			Bullets.RemoveAll (delegate(Bullet bullet) {
 				return !_bounds.Contains((Vector2) bullet.Position);
 			});
-		}
-
-		public IModel GetModel()
-		{
-			return _bulletSpaceModel;
 		}
 	}
 }

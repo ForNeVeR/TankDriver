@@ -64,7 +64,7 @@ namespace TankDriver
 
 			var textureStorage = new TextureStorage(Content);
 			_tank.GetModel().LoadTextures(textureStorage);
-			_bulletSpace.GetModel ().LoadTextures (textureStorage);
+			_bulletSpace.LoadTexture (textureStorage);
 		}
 
 		/// <summary>
@@ -136,7 +136,7 @@ namespace TankDriver
 			_tank.GetModel().Render(_spriteBatch);
 
 			// Render bullet space:
-			_bulletSpace.GetModel().Render(_spriteBatch);
+			_bulletSpace.Render(_spriteBatch);
 
 			base.Draw(gameTime);
 
