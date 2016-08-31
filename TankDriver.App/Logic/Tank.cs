@@ -11,6 +11,11 @@ namespace TankDriver.Logic
 	internal class Tank : IUnit
 	{
 		/// <summary>
+		/// The turret cooldown seconds.
+		/// </summary>
+		private const double TurretCooldownSeconds = 1.0;
+
+		/// <summary>
 		/// Acceleration, px / s ^ 2.
 		/// </summary>
 		public const double AccelerationConstant = 5.0;
@@ -142,7 +147,7 @@ namespace TankDriver.Logic
 		{
 			if (_turretCooldown <= 0.0) {
 				bulletSpace.AddBullet (Position.X, Position.Y, TurretHeading);
-				_turretCooldown = 1.0;
+				_turretCooldown = TurretCooldownSeconds;
 			}
 		}
 
