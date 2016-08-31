@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
+# Visual Studio 2012
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{46D2DF55-694E-4068-9FB0-C217873A5C55}"
@@ -32,6 +32,37 @@ Global
 		{3DD48C3D-D77B-43B5-B69C-0263F918A91A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3DD48C3D-D77B-43B5-B69C-0263F918A91A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3DD48C3D-D77B-43B5-B69C-0263F918A91A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		Policies = $0
+		$0.TextStylePolicy = $1
+		$1.FileWidth = 120
+		$1.inheritsSet = VisualStudio
+		$1.inheritsScope = text/plain
+		$1.scope = text/plain
+		$0.TextStylePolicy = $2
+		$2.inheritsSet = null
+		$2.scope = text/x-csharp
+		$0.CSharpFormattingPolicy = $3
+		$3.AfterDelegateDeclarationParameterComma = True
+		$3.inheritsSet = Mono
+		$3.inheritsScope = text/x-csharp
+		$3.scope = text/x-csharp
+		$0.TextStylePolicy = $4
+		$4.inheritsSet = null
+		$4.scope = application/config+xml
+		$0.XmlFormattingPolicy = $5
+		$5.inheritsSet = null
+		$5.scope = application/config+xml
+		$0.TextStylePolicy = $6
+		$6.inheritsSet = null
+		$6.scope = application/xml
+		$0.XmlFormattingPolicy = $7
+		$7.inheritsSet = Mono
+		$7.inheritsScope = application/xml
+		$7.scope = application/xml
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
