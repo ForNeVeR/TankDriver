@@ -10,7 +10,7 @@ namespace TankDriver.Logic
 		/// <summary>
 		/// Unit model.
 		/// </summary>
-		/// <returns>Reference ti this unit's model.</returns>
+		/// <returns>Reference to this unit's model.</returns>
 		IModel GetModel();
 	}
 }
