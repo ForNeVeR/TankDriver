@@ -127,5 +127,14 @@ namespace TankDriver
 
 			_spriteBatch.End();
 		}
+
+		protected override void Dispose(bool disposing)
+		{
+			base.Dispose(disposing);
+			if (disposing)
+			{
+				_graphics.Dispose();
+			}
+		}
 	}
 }
