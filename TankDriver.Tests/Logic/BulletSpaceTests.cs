@@ -27,6 +27,8 @@ namespace TankDriver.Tests.Logic
             tank.ShootInto(bulletSpace);
             Assert.Equal(1, bulletSpace.Bullets.Count);
             Assert.Equal(tank.TurretHeading, bulletSpace.Bullets[0].Heading, Configuration.GeometryPrecision);
+            Assert.Equal(tank.Position.X, bulletSpace.Bullets[0].Position.X, Configuration.GeometryPrecision);
+            Assert.Equal(tank.Position.Y, bulletSpace.Bullets[0].Position.Y, Configuration.GeometryPrecision);
         }
     }
 }
