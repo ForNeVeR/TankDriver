@@ -45,11 +45,8 @@ namespace TankDriver.Logic
             {
                 bullet.UpdatePosition(timeDelta);
             }
-				
-            Bullets.RemoveAll(delegate(Bullet bullet)
-            {
-                return !_bounds.Contains((Vector2)bullet.Position);
-            });
+
+            Bullets.RemoveAll(Bullet => !_bounds.Contains((Vector2)Bullet.Position));
         }
     }
 }
