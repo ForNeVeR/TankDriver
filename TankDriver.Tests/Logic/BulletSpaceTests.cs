@@ -14,7 +14,7 @@ namespace TankDriver.Tests.Logic
             bulletSpace.AddBullet(200.0, 200.0, 0.0);
             Assert.Equal(2, bulletSpace.Bullets.Count);
             bulletSpace.Update(System.TimeSpan.FromMilliseconds(10.0));
-            Assert.Equal(1, bulletSpace.Bullets.Count);
+            Assert.Equal(2, bulletSpace.Bullets.Count);
         }
     }
 }
