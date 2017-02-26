@@ -37,6 +37,8 @@ $ nuget restore
 $ xbuild
 ```
 
+Requires NixOS 16.09+
+
 Run
 ---
 
@@ -80,37 +82,6 @@ Or the following commands on Linux:
 $ mono ./packages/xunit.runner.console.2.1.0/tools/xunit.console.exe ./TankDriver.Tests/bin/Debug/TankDriver.Tests.dll
 ```
 
-### Running Tests on NixOS 16.03
-
-Please note that the tests cannot be run on Mono 4.0 because of
-[xunit#158][xunit-158]. Unfortunately that's the case of NixOS
-16.03. To use Mono 4.4 on NixOS 16.03 you can locally override the
-Mono package. Just put the following code to your
-`~/.nixpkgs/config.nix`:
-
-```nix
-{
-  # ...
-  packageOverrides = pkgs: rec {
-    # ...
-    mono = pkgs.stdenv.lib.overrideDerivation pkgs.mono (oldAttr: rec {
-      version = "4.4.1.0";
-      name = "mono-${version}";
-      src = pkgs.fetchurl {
-        url = "http://download.mono-project.com/sources/mono/${name}.tar.bz2";
-        sha256 = "0jibyvyv2jy8dq5ij0j00iq3v74r0y90dcjc3dkspcfbnn37cphn";
-      };
-    });
-    # ...
-  };
-  # ...
-}
-```
-
-and you current user will use Mono 4.4. Please notice that it will
-make NixOS compile Mono 4.4 from scratch which may take some
-considerable amount of time. Around 20 minutes or so.
-
 [andivionian-status-classifier]: https://github.com/ForNeVeR/andivionian-status-classifier#status-umbra-
 [appveyor]: https://ci.appveyor.com/project/ForNeVeR/tankdriver/branch/develop
 [mono]: http://www.mono-project.com/
@@ -119,7 +90,6 @@ considerable amount of time. Around 20 minutes or so.
 [travis]: https://travis-ci.org/ForNeVeR/TankDriver
 [visual-studio]: https://www.visualstudio.com/
 [xunit]: https://xunit.github.io/
-[xunit-158]: https://github.com/xunit/xunit/issues/158
 
 [appveyor-status]: https://ci.appveyor.com/api/projects/status/486qc2gl6m18pbvn/branch/develop?svg=true
 [status-umbra]: https://img.shields.io/badge/status-umbra-red.svg
