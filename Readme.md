@@ -82,8 +82,20 @@ Or the following commands on Linux:
 $ mono ./packages/xunit.runner.console.2.1.0/tools/xunit.console.exe ./TankDriver.Tests/bin/Debug/TankDriver.Tests.dll
 ```
 
+License
+-------
+
+All the source code of this project is distributed under the MIT license. Check
+[License.md][license] for more information.
+
+All the accompanying image files are licensed under a [Creative Commons
+Attribution 4.0 International License][cc-by-license].
+
+[license]: License.md
+
 [andivionian-status-classifier]: https://github.com/ForNeVeR/andivionian-status-classifier#status-umbra-
 [appveyor]: https://ci.appveyor.com/project/ForNeVeR/tankdriver/branch/develop
+[cc-by-license]: https://creativecommons.org/licenses/by/4.0/
 [mono]: http://www.mono-project.com/
 [monogame]: http://www.monogame.net/
 [nuget]: https://www.nuget.org/
