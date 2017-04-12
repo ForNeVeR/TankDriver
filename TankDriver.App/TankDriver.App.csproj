@@ -96,16 +96,15 @@
 
     <ApplicationIcon>$(IntermediateOutputPath)icon.ico</ApplicationIcon>
   </PropertyGroup>
-  <Target Name="BeforeBuild">
+
+  <Target Name="BeforeCompile" Inputs="resources\icon.svg" Outputs="$(ApplicationIcon)">
     <ItemGroup>
       <GeneratedResources Include="$(ApplicationIcon)" />
     </ItemGroup>
     <ItemGroup>
       <FileWrites Include="@(GeneratedResources)"/>
     </ItemGroup>
-  </Target>
 
-  <Target Name="BeforeCompile" Inputs="resources\icon.svg" Outputs="$(ApplicationIcon)">
     <Message Text="Building image resources…" />
     <Message Text="ImageMagick binary: $(ImageMagick)" />
     <Exec Command="$(ImageMagick) -background none resources\icon.svg -resize 128x128 $(ApplicationIcon)" />
