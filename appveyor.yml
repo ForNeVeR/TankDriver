@@ -1,4 +1,6 @@
+install:
+    - cinst imagemagick
 before_build:
-- nuget restore
+    - nuget restore
 
 version: 0.1.0.{build}
