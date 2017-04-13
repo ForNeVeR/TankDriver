@@ -79,6 +79,7 @@
     <Content Include="OpenTK.dll.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="resources\icon.svg" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="NLog.config">
@@ -93,18 +94,15 @@
   <PropertyGroup>
     <ImageMagick Condition=" '$(OS)' == 'Unix' ">convert</ImageMagick>
     <ImageMagick Condition=" '$(OS)' != 'Unix' ">magick convert</ImageMagick>
-
     <ApplicationIcon>$(IntermediateOutputPath)icon.ico</ApplicationIcon>
   </PropertyGroup>
-
   <Target Name="BeforeCompile" Inputs="resources\icon.svg" Outputs="$(ApplicationIcon)">
     <ItemGroup>
       <GeneratedResources Include="$(ApplicationIcon)" />
     </ItemGroup>
     <ItemGroup>
-      <FileWrites Include="@(GeneratedResources)"/>
+      <FileWrites Include="@(GeneratedResources)" />
     </ItemGroup>
-
     <Message Text="Building image resources…" />
     <Message Text="ImageMagick binary: $(ImageMagick)" />
     <Exec Command="$(ImageMagick) -background none resources\icon.svg -resize 128x128 $(ApplicationIcon)" />
