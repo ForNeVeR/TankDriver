@@ -10,6 +10,8 @@ namespace TankDriver
 	/// </summary>
 	public class Game : Microsoft.Xna.Framework.Game
 	{
+        // TODO(#6): add a couple of enemies to the game
+        
 		/// <summary>
 		/// Graphics device manager.
 		/// </summary>

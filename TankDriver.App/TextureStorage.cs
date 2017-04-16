@@ -24,6 +24,12 @@ namespace TankDriver
 		/// <value>The bullet texture.</value>
 		public Texture2D BulletTexture { get; }
 
+        /// <summary>
+        /// Gets the enemy body texture.
+        /// </summary>
+        /// <value>The enemy body texture.</value>
+        public Texture2D EnemyBodyTexture { get; }
+
 		/// <summary>
 		/// Texture storage constructor. Loads textures from <see cref="contentManager"/>.
 		/// </summary>
@@ -33,6 +39,7 @@ namespace TankDriver
 			TankBodyTexture = contentManager.Load<Texture2D>("Tank/Body");
 			TankTurretTexture = contentManager.Load<Texture2D>("Tank/Turret");
 			BulletTexture = contentManager.Load<Texture2D> ("Bullet/Bullet");
+            EnemyBodyTexture = contentManager.Load<Texture2D>("Enemy/Body");
 		}
 	}
 }
