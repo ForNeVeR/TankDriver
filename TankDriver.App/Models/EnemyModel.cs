@@ -1,29 +1,34 @@
-﻿using System;
+﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
+using TankDriver.Logic;
 
 namespace TankDriver.Models
 {
-    // TODO(#6): Implement TankDriver.Models.EnemyModel
     internal class EnemyModel: IModel
     {
-        public EnemyModel()
+        private TextureStorage _textureStorage;
+        private readonly Enemy _enemy;
+
+        public EnemyModel(Enemy enemy)
         {
+            _enemy = enemy;
         }
 
         #region IModel implementation
 
-        public TankDriver.Logic.IUnit GetUnit()
+        public IUnit GetUnit()
         {
-            throw new NotImplementedException();
+            return _enemy;
         }
 
         public void LoadTextures(TextureStorage textureStorage)
         {
-            throw new NotImplementedException();
+            _textureStorage = textureStorage;
         }
 
-        public void Render(Microsoft.Xna.Framework.Graphics.SpriteBatch spriteBatch)
+        public void Render(SpriteBatch spriteBatch)
         {
-            throw new NotImplementedException();
+            spriteBatch.Draw(_textureStorage.BulletTexture, (Vector2)_enemy.position);
         }
 
         #endregion
