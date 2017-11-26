@@ -1,7 +1,4 @@
-install:
-    - cinst imagemagick
 before_build:
     - nuget restore
-    - refreshenv
 
 version: 0.1.0.{build}
