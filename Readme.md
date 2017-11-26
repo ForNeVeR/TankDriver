@@ -12,9 +12,6 @@ installed and its' executable files available in `PATH` environment variable.
 
 ### Windows
 
-Windows build process relies on `magick` executable file from the
-[ImageMagick][imagemagick] package.
-
 Either use [Visual Studio][visual-studio] to open and build `TankDriver.sln`
 file, or invoke the following commands in developer console:
 
@@ -24,9 +21,6 @@ file, or invoke the following commands in developer console:
 ```
 
 ### Linux
-
-Linux build relies on `convert` executable file from the
-[ImageMagick][imagemagick] package.
 
 You'll need [Mono][mono] and [NuGet][nuget] installed.
 
@@ -105,7 +99,6 @@ Attribution 4.0 International License][cc-by-license].
 [andivionian-status-classifier]: https://github.com/ForNeVeR/andivionian-status-classifier#status-umbra-
 [appveyor]: https://ci.appveyor.com/project/ForNeVeR/tankdriver/branch/develop
 [cc-by-license]: https://creativecommons.org/licenses/by/4.0/
-[imagemagick]: https://www.imagemagick.org/script/index.php
 [mono]: http://www.mono-project.com/
 [monogame]: http://www.monogame.net/
 [nuget]: https://www.nuget.org/
